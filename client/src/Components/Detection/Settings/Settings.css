@@ -1,0 +1,33 @@
+.settings{
+    width: 100%;
+    display: flex;
+    gap: 8px 0;
+    flex-direction: column;
+    max-width: 550px;
+}
+.setting{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--medium-gray-color);
+    border-radius: var(--small-border-radius);
+}
+.setting select{
+    border: none;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 0 0;
+    background: var(--dark-gray-color);
+    border-radius: var(--small-border-radius);
+}
+.setting input[type="range"]{
+    width: 93%;
+}
+datalist{
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+}

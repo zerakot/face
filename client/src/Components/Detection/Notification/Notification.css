@@ -1,0 +1,55 @@
+.notification{
+    width: 300px;
+    bottom: 15px;
+    right: -100%;
+    display: flex;
+    gap: 3px 0;
+    flex-direction: column;
+    position: fixed;
+    padding: 8px 15px;
+    background-color: #fff;
+    border: 2px black solid;
+    animation: showNotification .3s forwards;
+    border-radius: var(--small-border-radius);
+}
+@keyframes showNotification{
+    from{right: -100%;}
+    to{right: 20px;}
+}
+.notification .close{
+    top: 5px;
+    right: 5px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    position: absolute;
+}
+.notification .title{
+    width: 100%;
+    font-weight: bold;
+    text-align: left;
+}
+.notification .description{
+    width: 100%;
+    color: black;
+    font-size: 14px;
+    text-align: left;
+}
+.notification button.action{
+    width: 100%;
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 7px 0;
+    border: none;
+    color: var(--light-font-color);
+    background: var(--tertiary-color);
+    transition: border .2s;
+    border-radius: var(--small-border-radius);
+}
+.notification button.action:not(:disabled):hover{
+    background: var(--tertiary-color-hover);
+}

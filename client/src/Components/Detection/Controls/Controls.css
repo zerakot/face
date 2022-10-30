@@ -1,0 +1,35 @@
+.controls{
+    display: flex;
+    gap: 0 3px;
+}
+.controls button{
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 20px;
+    color: var(--light-font-color);
+    background: var(--tertiary-color);
+    border: 3px solid #fff;
+    transition: border .2s;
+    border-radius: var(--small-border-radius);
+}
+
+.controls button.start{
+    background: var(--accept-primary-color);
+}
+.controls button.start:hover{
+    border: 3px solid var(--accept-secondary-color);
+    background: var(--accept-hover-color);
+}
+
+.controls button.pause{
+    background: var(--decline-primary-color);
+}
+.controls button.pause:hover{
+    border: 3px solid var(--decline-secondary-color);
+    background: var(--decline-hover-color);
+}
+
+.controls button:hover{
+    border: 3px solid var(--primary-color);
+    background: var(--tertiary-color-hover);
+}

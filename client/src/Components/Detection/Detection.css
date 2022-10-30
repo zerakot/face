@@ -1,0 +1,31 @@
+.detection{
+    margin: 70px 0;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 15px 0;
+    background: #fff;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: var(--soft-box-shadow);
+    border-radius: var(--medium-border-radius);
+}
+.toggleAnalyticsVisibility{
+    font-size: 13px;
+    cursor: pointer;
+    padding: 6px 16px;
+    color: var(--light-font-color);
+    background: var(--tertiary-color);
+    border: 3px solid #fff;
+    transition: border .2s;
+    border-radius: var(--small-border-radius);
+}
+.toggleAnalyticsVisibility:not(:disabled):hover{
+    border: 3px solid var(--primary-color);
+    background: var(--tertiary-color-hover);
+}
+.toggleAnalyticsVisibility:disabled{
+    cursor: default;
+    background: var(--button-disabled-color);
+}
