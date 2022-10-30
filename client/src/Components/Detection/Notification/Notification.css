@@ -46,10 +46,10 @@
     padding: 7px 0;
     border: none;
     color: var(--light-font-color);
-    background: var(--tertiary-color);
+    background: var(--primary-color);
     transition: border .2s;
     border-radius: var(--small-border-radius);
 }
 .notification button.action:not(:disabled):hover{
-    background: var(--tertiary-color-hover);
+    background: var(--primary-color-hover);
 }
