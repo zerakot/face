@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import urllib.request
 from flask_cors import CORS
-from flask import Flask, request, Response, jsonify
+from flask import Flask, request,  jsonify
 from ai import detect
 
 app = Flask(__name__)
