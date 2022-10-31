@@ -5,27 +5,9 @@
     align-items: center;
     padding: 20px;
     gap: 15px 0;
-    background: #fff;
+    background: var(--tertiary-gray-color);
     justify-content: center;
     flex-direction: column;
     box-shadow: var(--soft-box-shadow);
     border-radius: var(--medium-border-radius);
-}
-.toggleAnalyticsVisibility{
-    font-size: 13px;
-    cursor: pointer;
-    padding: 6px 16px;
-    color: var(--light-font-color);
-    background: var(--primary-color);
-    border: 3px solid #fff;
-    transition: border .2s;
-    border-radius: var(--small-border-radius);
-}
-.toggleAnalyticsVisibility:not(:disabled):hover{
-    border: 3px solid var(--primary-color);
-    background: var(--primary-color-hover);
-}
-.toggleAnalyticsVisibility:disabled{
-    cursor: default;
-    background: var(--button-disabled-color);
 }

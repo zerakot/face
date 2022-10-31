@@ -1,6 +1,7 @@
 import {useEffect, useId} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {updateSettings, setAvailableWebcams} from '../../../redux/settingsManager';
+import './Helpers.css';
 import './Settings.css';
 
 export default function Settings() {
@@ -21,6 +22,18 @@ export default function Settings() {
 
 	return (
 		<div className="settings">
+			<div className="colorSwitcher">
+				<label htmlFor={`dark-mode-${id}`}>
+					<input
+						type="checkbox"
+						id={`dark-mode-${id}`}
+						name="darkMode"
+						onChange={(e) => dispatch(updateSettings({name: e.target.name, value: !settings.darkMode}))}
+						checked={settings.darkMode}
+					/>
+					<span className="slider"></span>
+				</label>
+			</div>
 			<div className="setting">
 				<label htmlFor={`select-camera-${id}`}>Select camera</label>
 				<select name="cameraId" id={`select-camera-${id}`} onChange={(e) => dispatch(updateSettings({name: e.target.name, value: e.target.value}))} value={settings.cameraId}>

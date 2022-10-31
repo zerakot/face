@@ -5,7 +5,7 @@
     bottom: 0;
     min-height: 100%;
     position: absolute;
-    background: #00000059;
+    background: #1212128c;
 }
 
 .calibration{
@@ -20,9 +20,9 @@
     flex-direction: column;
     border: 2px solid black;
     justify-content: center;
-    background-color: #fffffff3;
+    background-color: rgba(var(--primary-theme-color), 0.953);
     transform: translateX(-50%);
-    color: var(--main-font-color);
+    color: var(--primary-font-color);
     border-radius: var(--small-border-radius);
 }
 .calibration p{
@@ -33,14 +33,14 @@
     font-size: 14px;
     cursor: pointer;
     padding: 8px 16px;
-    color: var(--light-font-color);
-    background: var(--primary-color);
-    border: 3px solid #fff;
     transition: border .2s;
+    color: var(--secondary-font-color);
+    background: var(--primary-color);
     border-radius: var(--small-border-radius);
+    border: 3px solid rgb(var(--primary-theme-color));
 }
 .calibration button:not(:disabled):hover{
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--tertiary-color);
     background: var(--primary-color-hover);
 }
 .calibration button:disabled{

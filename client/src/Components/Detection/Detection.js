@@ -17,10 +17,6 @@ export default function Detction() {
 	const {calibrationX, calibrationVisiblity} = useSelector((state) => state.detection);
 	const webcamRef = useRef(null);
 
-	useEffect(() => {
-		dispatch(loadSettings());
-	}, []);
-
 	return (
 		<div className="detection">
 			<WebcamPreview webcamRef={webcamRef} />

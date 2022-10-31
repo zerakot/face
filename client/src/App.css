@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 :root{
-    --light-gray-color: #f8f7ff;
-    --medium-gray-color: #f1f1f1;
-    --dark-gray-color: #d4d4d4;
+    --primary-theme-color: 243, 243, 243;
+    --secondary-theme-color: #c5c5c5;
+    --tertiary-theme-color: #cfcfcf;
+
+    --primary-gray-color: #e9e9e9;
+    --secondary-gray-color: #f8f8f8;
+    --tertiary-gray-color: #f8f8f8;
 
     --primary-color: #0071ad;
     --primary-color-hover: #005f92;
-    --secondary-color: #4d9cc6;
-    --tertiary-color: #00669c;
+    --secondary-color: #9381ff;
+    --tertiary-color: #0071ad;
 
-    --button-disabled-color: #a6a6a6;
+    --button-disabled-color: #adadad;
 
     --accept-primary-color: #00ad42;
     --accept-secondary-color: #8feab2;
@@ -21,11 +25,39 @@
     --small-border-radius: 8px;
     --medium-border-radius: 12px;
     
-    --main-font-color: #090909;
-    --light-font-color: #f8f7ff;
+    --primary-font-color: #090909;
+    --secondary-font-color: #f8f7ff;
     
     --soft-box-shadow: 4px 8px 26px #00000026;
     --high-box-shadow: 6px 12px 16px #0000004f;
+}
+[data-theme="dark"]{
+    --primary-theme-color: 18, 18, 18;
+    --secondary-theme-color: #00080d;
+    --tertiary-theme-color: #003654;
+    
+    --primary-gray-color: #161616;
+    --secondary-gray-color: #161616;
+    --tertiary-gray-color: #0b0b0b;
+
+    --primary-color: #00466b;
+    --primary-color-hover: #005e91;
+    --secondary-color: #9381ff;
+    --tertiary-color: #003755;
+
+    --button-disabled-color: #2c2c2c;
+
+    --accept-primary-color: #006810;
+    --accept-secondary-color: #004202;
+    --accept-hover-color: #00910f;
+    --decline-primary-color: #830000;
+    --decline-secondary-color: #5a0000;
+    --decline-hover-color: #a30000;
+    
+    --primary-font-color: #e3f5ff;
+    --secondary-font-color: #f8f7ff;
+    
+    --soft-box-shadow: 4px 8px 26px #4b4b4b26;
 }
 
 *{
@@ -35,11 +67,15 @@
 body{
     margin: 0;
     padding: 0;
+}
+.container{
+    margin: 0;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     flex-direction: column;
-    background: var(--light-gray-color);
+    background: rgb(var(--primary-theme-color));
 }

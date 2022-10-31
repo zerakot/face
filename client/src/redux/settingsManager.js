@@ -7,6 +7,7 @@ export const settingsSlice = createSlice({
 			sensitivity: -8,
 			detectionInterval: 5,
 			cameraId: '',
+			darkMode: true,
 		},
 		availableWebcams: [],
 	},
@@ -14,10 +15,11 @@ export const settingsSlice = createSlice({
 		loadSettings: (state) => {
 			const loadSettings = JSON.parse(localStorage.getItem('settings'));
 			if (loadSettings === null) return;
-			state.settings = loadSettings;
+			console.log({...state.settings, ...loadSettings});
+			state.settings = {...state.settings, ...loadSettings};
 		},
 		updateSettings: (state, action) => {
-			const formatedValue = !isNaN(action.payload.value) ? parseInt(action.payload.value) : action.payload.value;
+			const formatedValue = !isNaN(action.payload.value) && typeof action.payload.value !== 'boolean' ? parseInt(action.payload.value) : action.payload.value;
 			const newSettings = {...state.settings, [action.payload.name]: formatedValue};
 
 			localStorage.setItem('settings', JSON.stringify({...newSettings, cameraId: ''}));

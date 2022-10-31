@@ -1,0 +1,65 @@
+.setting input[type="range"]::-webkit-slider-thumb{
+    width: 10px;
+    height: 16px;
+    appearance: none;
+    margin: -6px 0 0 0;
+    -webkit-appearance: none;
+    border-radius: 0 50% 50% 0;
+    background: var(--primary-color);
+    box-shadow: -508px 0 0 500px var(--primary-color);
+}
+.setting input[type="range"]::-moz-range-thumb{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-color: var(--primary-color); 
+}
+.setting input[type="range"]::-moz-range-progress,
+.setting input[type="range"]::-moz-range-track,
+.setting input[type="range"]::-ms-fill-lower {
+    background-color: var(--primary-color); 
+}
+.setting input[type="range"]::-ms-fill-upper {  
+    background-color: transparent;
+}
+  
+.colorSwitcher input {
+    display: none;
+}
+.colorSwitcher .slider{
+    width: 60px;
+    height: 34px;
+    display: block;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: var(--tertiary-theme-color);
+}
+.colorSwitcher .slider:before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.colorSwitcher input:checked + .slider{
+    background-color: var(--tertiary-theme-color);
+}  
+.colorSwitcher input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
