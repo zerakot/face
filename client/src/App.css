@@ -1,64 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-:root{
-    --primary-theme-color: 243, 243, 243;
-    --secondary-theme-color: #c5c5c5;
-    --tertiary-theme-color: #cfcfcf;
-
-    --primary-gray-color: #e9e9e9;
-    --secondary-gray-color: #f8f8f8;
-    --tertiary-gray-color: #f8f8f8;
-
-    --primary-color: #0071ad;
-    --primary-color-hover: #005f92;
-    --secondary-color: #9381ff;
-    --tertiary-color: #0071ad;
-
-    --button-disabled-color: #adadad;
-
-    --accept-primary-color: #00ad42;
-    --accept-secondary-color: #8feab2;
-    --accept-hover-color: #009b3c;
-    --decline-primary-color: #e00000;
-    --decline-secondary-color: #ea8f8f;
-    --decline-hover-color: #cd0a00;
-
-    --small-border-radius: 8px;
-    --medium-border-radius: 12px;
-    
-    --primary-font-color: #090909;
-    --secondary-font-color: #f8f7ff;
-    
-    --soft-box-shadow: 4px 8px 26px #00000026;
-    --high-box-shadow: 6px 12px 16px #0000004f;
-}
-[data-theme="dark"]{
-    --primary-theme-color: 18, 18, 18;
-    --secondary-theme-color: #00080d;
-    --tertiary-theme-color: #003654;
-    
-    --primary-gray-color: #161616;
-    --secondary-gray-color: #161616;
-    --tertiary-gray-color: #0b0b0b;
-
-    --primary-color: #00466b;
-    --primary-color-hover: #005e91;
-    --secondary-color: #9381ff;
-    --tertiary-color: #003755;
-
-    --button-disabled-color: #2c2c2c;
-
-    --accept-primary-color: #006810;
-    --accept-secondary-color: #004202;
-    --accept-hover-color: #00910f;
-    --decline-primary-color: #830000;
-    --decline-secondary-color: #5a0000;
-    --decline-hover-color: #a30000;
-    
-    --primary-font-color: #e3f5ff;
-    --secondary-font-color: #f8f7ff;
-    
-    --soft-box-shadow: 4px 8px 26px #4b4b4b26;
-}
 
 *{
     box-sizing: border-box;
@@ -67,15 +7,4 @@
 body{
     margin: 0;
     padding: 0;
-}
-.container{
-    margin: 0;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-direction: column;
-    background: rgb(var(--primary-theme-color));
 }

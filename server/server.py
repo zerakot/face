@@ -4,6 +4,7 @@ import urllib.request
 from flask_cors import CORS
 from flask import Flask, request,  jsonify
 from ai import detect
+import time
 
 app = Flask(__name__)
 CORS(app, resources={r"*": {"origins": "*"}})

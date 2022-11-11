@@ -12,6 +12,10 @@
     transition: border .2s;
     border-radius: var(--small-border-radius);
 }
+.controls button:hover{
+    border: 3px solid var(--tertiary-color);
+    background: var(--primary-color-hover);
+}
 
 .controls button.start{
     background: var(--accept-primary-color);
@@ -29,7 +33,3 @@
     background: var(--decline-hover-color);
 }
 
-.controls button:hover{
-    border: 3px solid var(--tertiary-color);
-    background: var(--primary-color-hover);
-}

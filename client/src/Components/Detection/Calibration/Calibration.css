@@ -9,7 +9,7 @@
 }
 
 .calibration{
-    top: 30%;
+    top: 20vh;
     left: 50%;
     gap: 15px 0;
     display: flex;
@@ -29,7 +29,16 @@
     margin: 0;
     font-size: 14px;
 }
-.calibration button{
+
+.calibration .buttons{
+    width: 100%;
+    display: flex;
+    gap: 0 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.calibration .buttons button{
     font-size: 14px;
     cursor: pointer;
     padding: 8px 16px;
@@ -39,11 +48,19 @@
     border-radius: var(--small-border-radius);
     border: 3px solid rgb(var(--primary-theme-color));
 }
-.calibration button:not(:disabled):hover{
+.calibration .buttons button.calibrate:not(:disabled):hover{
     border: 3px solid var(--tertiary-color);
     background: var(--primary-color-hover);
 }
-.calibration button:disabled{
+.calibration .buttons button.calibrate:disabled{
     cursor: default;
     background: var(--button-disabled-color);
+}
+/* Cancel button */
+.calibration .buttons button.cancel{
+    background: var(--decline-primary-color);
+}
+.calibration .buttons button.cancel:hover{
+    border: 3px solid var(--decline-secondary-color);
+    background: var(--decline-hover-color);
 }

@@ -8,7 +8,7 @@ import './Calibration.css';
 
 export default function Calibration(props) {
 	const dispatch = useDispatch();
-	const {webcamReady} = useSelector((state) => state.detection);
+	const {calibrationX, webcamReady} = useSelector((state) => state.detection);
 	const webcamRef = props.webcamRef;
 
 	async function calibrateX() {
@@ -23,16 +23,23 @@ export default function Calibration(props) {
 			return;
 		}
 		dispatch(setCalibrationX(rotationValue));
-		dispatch(hideCalibration(false));
+		dispatch(hideCalibration());
 	}
 
 	return (
 		<div className="calibration-pointer-events-wrapper">
 			<div className="calibration">
 				<p>Point your head at the "Calibrate" button and press it to calibrate.</p>
-				<button className="calibrate" onClick={calibrateX} disabled={!webcamReady}>
-					Calibrate
-				</button>
+				<div className="buttons">
+					{calibrationX !== false && (
+						<button className="cancel" onClick={() => dispatch(hideCalibration())}>
+							Cancel
+						</button>
+					)}
+					<button className="calibrate" onClick={calibrateX} disabled={!webcamReady}>
+						Calibrate
+					</button>
+				</div>
 			</div>
 		</div>
 	);

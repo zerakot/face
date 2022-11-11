@@ -1,0 +1,41 @@
+.banner{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    margin: 50px 0 0 0;
+}
+.banner svg{
+    height: 100%;
+    transform: scale(-1,1) translateY(40px);
+}
+.banner .about{
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 350px;
+    max-width: 35vw;
+}
+.banner .about h1{
+    margin: 0;
+    font-size: 1.6em;
+}
+.banner .getStarted{
+    border: none;
+    color: #fff;
+    width: fit-content;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: unset;
+    background-color: #0071ad;
+    border-radius: 8px;
+    padding: 9px 30px;
+}
+.banner .getStarted:hover{
+    background-color: #00659b;
+}

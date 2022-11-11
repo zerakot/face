@@ -13,18 +13,25 @@ import './Detection.css';
 
 export default function Detction() {
 	const dispatch = useDispatch();
+	const {settings} = useSelector((state) => state.settings);
 	const {notificationVisiblity} = useSelector((state) => state.notifications);
 	const {calibrationX, calibrationVisiblity} = useSelector((state) => state.detection);
 	const webcamRef = useRef(null);
 
+	useEffect(() => {
+		dispatch(loadSettings());
+	}, []);
+
 	return (
-		<div className="detection">
-			<WebcamPreview webcamRef={webcamRef} />
-			{calibrationX !== false && <Controls />}
-			<Settings />
-			<Analytics />
-			{calibrationVisiblity && <Calibration webcamRef={webcamRef} />}
-			{notificationVisiblity && <Notification />}
+		<div className="container" data-theme={settings.darkMode ? 'dark' : 'light'}>
+			<div className="detection">
+				<WebcamPreview webcamRef={webcamRef} />
+				{calibrationX !== false && <Controls />}
+				<Settings />
+				<Analytics />
+				{calibrationVisiblity && <Calibration webcamRef={webcamRef} />}
+				{notificationVisiblity && <Notification />}
+			</div>
 		</div>
 	);
 }

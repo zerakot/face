@@ -62,7 +62,9 @@ export default function Settings() {
 				/>
 				<datalist id={`sensitivity-datalist-${id}`}>
 					<option value="-12" label="Very soft"></option>
+					<option value="-10" label=""></option>
 					<option value="-8" label="Recommended"></option>
+					<option value="-6" label=""></option>
 					<option value="-4" label="Very strict"></option>
 				</datalist>
 			</div>

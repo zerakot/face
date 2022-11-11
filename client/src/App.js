@@ -1,27 +1,36 @@
-import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React from 'react';
+import {createBrowserRouter, RouterProvider, Route} from 'react-router-dom';
 import Detction from './Components/Detection/Detection';
-import {loadSettings} from './redux/settingsManager';
+import Homepage from './Components/Homepage/Homepage';
 import './App.css';
 
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <Homepage />,
+	},
+	{
+		path: '/app',
+		element: <Detction />,
+	},
+]);
+
 function App() {
-	const dispatch = useDispatch();
-	const {settings} = useSelector((state) => state.settings);
-
-	useEffect(() => {
-		dispatch(loadSettings());
-	}, []);
-
 	return (
-		<div className="container" data-theme={settings.darkMode ? 'dark' : 'light'}>
-			<Detction />
-		</div>
+		<React.StrictMode>
+			<RouterProvider router={router} />
+		</React.StrictMode>
 	);
 }
 
 export default App;
 
 /* 
-	- Dark mode
+	- Stwórz stronę główną
+	- Sprawdź i/lub popraw działanie korekcji
+	- Popraw kalibrację
 
+	Commit:
+	- Popraw błąd złego wyświetlania wysokości kalibracji
+	- Dodaj podziałki na ustawienia pośrednie
 */
