@@ -1,5 +1,5 @@
 :root{
-    --primary-theme-color: 238, 238, 238;
+    --primary-theme-color: 242, 242, 242;
     --secondary-theme-color: #c5c5c5;
     --tertiary-theme-color: #cfcfcf;
 
@@ -9,16 +9,12 @@
 
     --primary-color: #0071ad;
     --primary-color-hover: #00659b;
-    --secondary-color: #9381ff;
-    --tertiary-color: #64c9ff;
 
     --button-disabled-color: #adadad;
 
     --accept-primary-color: #00ad42;
-    --accept-secondary-color: #8feab2;
     --accept-hover-color: #009b3c;
     --decline-primary-color: #e00000;
-    --decline-secondary-color: #ea8f8f;
     --decline-hover-color: #cd0a00;
 
     --small-border-radius: 8px;
@@ -41,16 +37,12 @@
 
     --primary-color: #00466b;
     --primary-color-hover: #005e91;
-    --secondary-color: #9381ff;
-    --tertiary-color: #003755;
 
     --button-disabled-color: #2c2c2c;
 
     --accept-primary-color: #006810;
-    --accept-secondary-color: #004202;
     --accept-hover-color: #00910f;
     --decline-primary-color: #830000;
-    --decline-secondary-color: #5a0000;
     --decline-hover-color: #a30000;
     
     --primary-font-color: #e3f5ff;
@@ -83,4 +75,38 @@
     flex-direction: column;
     box-shadow: var(--soft-box-shadow);
     border-radius: var(--medium-border-radius);
+}
+
+/* BUTTONS */
+.default-button{
+    font-size: 14px;
+    cursor: pointer;
+    padding: 9px 20px;
+    transition: box-shadow .2s;
+    color: var(--secondary-font-color);
+    background: var(--primary-color);
+    border-radius: var(--small-border-radius);
+    border: none;
+}
+.default-button:not(:disabled):hover{
+    box-shadow: 0 0 10px var(--primary-color);
+    background: var(--primary-color-hover);
+}
+.default-button:disabled{
+    cursor: default;
+    background: var(--button-disabled-color);
+}
+.default-button.red{
+    background: var(--decline-primary-color);
+}
+.default-button.red:hover{
+    box-shadow: 0 0 10px var(--decline-primary-color);
+    background: var(--decline-hover-color);
+}
+.default-button.green{
+    background: var(--accept-primary-color);
+}
+.default-button.green:hover{
+    box-shadow: 0 0 10px var(--accept-primary-color);
+    background: var(--accept-hover-color);
 }

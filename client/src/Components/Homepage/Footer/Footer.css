@@ -1,0 +1,39 @@
+.footer{
+    width: 100%;
+    background: #1b1b1b;
+    margin: 4em 0 0 0;
+    display: flex;
+    padding: 2em 0;
+    color: #fff;
+    gap: 1.5em 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.footer .column{
+    width: 25vw;
+    display: flex;
+    gap: 1em 0;
+    text-align: center;
+    font-size: 0.9em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer .column .logo{
+    width: 180px;
+    fill: #0071AD;
+
+}
+.footer .column .socials{
+    display: flex;
+    gap: 0 1em;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.footer .column .socials svg{
+    fill: #fff;
+    height: 40px;
+    width: 40px;
+}

@@ -1,6 +1,11 @@
+.webcamPreview{
+    position: relative;
+    overflow: hidden;
+}
 .webcamPreview video{
     width: 550px;
     height: 100%;
-    background: var(--light-gray-color);
+    min-height: 310px;
+    background: var(--primary-gray-color);
     border-radius: var(--small-border-radius);
 }

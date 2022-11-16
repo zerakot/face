@@ -1,9 +1,8 @@
 .homepage{
-    gap: 30px;
+    gap: 2em;
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: #eeeeee;
-    padding: 0 0 900px 0;
 }

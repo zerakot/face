@@ -8,10 +8,10 @@ export default function Banner() {
 			<BannerSvg />
 
 			<div className="about">
-				<h1>Lorem ipsum dolor sit amet consectetur</h1>
+				<h1>Let AI take care of your posture</h1>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum
-					quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
+					<span>PostureAssistant.com</span> is an application that uses artificial intelligence to monitor your posture while working in front of a computer. Take care of your posture
+					completely free.
 				</p>
 				<Link to="/app">
 					<button className="getStarted">Get Started</button>

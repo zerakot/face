@@ -3,6 +3,7 @@ import Banner from './Banner/Banner';
 import About from './About/About';
 import Faq from './Faq/Faq';
 import Donate from './Donate/Donate';
+import Footer from './Footer/Footer';
 import './Homepage.css';
 
 export default function Homepage() {
@@ -13,6 +14,7 @@ export default function Homepage() {
 			<About />
 			<Faq />
 			<Donate />
+			<Footer />
 		</div>
 	);
 }

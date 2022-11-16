@@ -9,7 +9,7 @@ export default function Analytics() {
 
 	return (
 		<div className="analytics">
-			<button className="toggleAnalyticsVisibility" onClick={() => dispatch(toggleAnalyticsVisiblity())} disabled={logs < 2} title={logs < 2 ? 'Not enough data' : ''}>
+			<button className="default-button toggleAnalyticsVisibility" onClick={() => dispatch(toggleAnalyticsVisiblity())} disabled={logs < 2} title={logs < 2 ? 'Not enough data' : ''}>
 				{analyticsVisibility ? 'Hide analytics' : 'Show analytics'}
 			</button>
 

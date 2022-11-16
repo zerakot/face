@@ -1,7 +1,8 @@
-import {useEffect} from 'react';
-import Webcam from 'react-webcam';
+import {useEffect, useRef} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import Webcam from 'react-webcam';
 
+import Calibration from './Calibration/Calibration';
 import {addLog} from '../../../redux/analyticsManager';
 import {sendNotification} from '../../../redux/notificationManager';
 import {setWebcamReady, toggleDetectionState} from '../../../redux/detectionManager';
@@ -9,9 +10,9 @@ import {setWebcamReady, toggleDetectionState} from '../../../redux/detectionMana
 import messages from '../Notification/messages';
 import {detect} from '../Helpers';
 
-import './WebcamPreview.css';
 import noFaceDetectedSound from '../audio/no_face_detected.mp3';
 import alertSound from '../audio/alert.mp3';
+import './WebcamPreview.css';
 
 const videoConstraints = {
 	width: 1280,
@@ -20,9 +21,9 @@ const videoConstraints = {
 
 export default function WebcamPreview(props) {
 	const dispatch = useDispatch();
-	const {calibrationX, detectionState} = useSelector((state) => state.detection);
+	const {calibrationX, calibrationVisiblity, detectionState, webcamReady} = useSelector((state) => state.detection);
 	const {settings} = useSelector((state) => state.settings);
-	const {webcamRef} = props;
+	const webcamRef = useRef(null);
 
 	let noFaceDetectedAudio = new Audio(noFaceDetectedSound);
 	let alertAudio = new Audio(alertSound);
@@ -36,7 +37,6 @@ export default function WebcamPreview(props) {
 					dispatch(toggleDetectionState());
 					return;
 				}
-
 				if (rotationValue === 'NoFaceDetected') {
 					noFaceDetectedAudio.play();
 					return;
@@ -66,6 +66,7 @@ export default function WebcamPreview(props) {
 				onUserMediaError={() => dispatch(sendNotification(messages.userMediaErrorNotify))}
 				videoConstraints={{...videoConstraints, deviceId: settings.cameraId}}
 			/>
+			{calibrationVisiblity && <Calibration webcamRef={webcamRef} />}
 		</div>
 	);
 }

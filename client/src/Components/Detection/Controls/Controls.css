@@ -1,35 +1,4 @@
 .controls{
     display: flex;
-    gap: 0 3px;
+    gap: 0 .5em;
 }
-.controls button{
-    font-size: 14px;
-    cursor: pointer;
-    padding: 8px 20px;
-    color: var(--secondary-font-color);
-    background: var(--primary-color);
-    border: 3px solid rgb(var(--primary-theme-color));
-    transition: border .2s;
-    border-radius: var(--small-border-radius);
-}
-.controls button:hover{
-    border: 3px solid var(--tertiary-color);
-    background: var(--primary-color-hover);
-}
-
-.controls button.start{
-    background: var(--accept-primary-color);
-}
-.controls button.start:hover{
-    border: 3px solid var(--accept-secondary-color);
-    background: var(--accept-hover-color);
-}
-
-.controls button.pause{
-    background: var(--decline-primary-color);
-}
-.controls button.pause:hover{
-    border: 3px solid var(--decline-secondary-color);
-    background: var(--decline-hover-color);
-}
-

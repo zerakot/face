@@ -11,7 +11,7 @@ export default function About() {
 					<Section1 />
 				</div>
 				<div className="box text">
-					<h2>Lorem ipsum dolor sit amet consectetur</h2>
+					<h2>Artificial intelligence works for you</h2>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum
 						quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!

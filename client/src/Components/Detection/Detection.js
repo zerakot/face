@@ -1,8 +1,7 @@
-import {useRef, useEffect} from 'react';
+import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import WebcamPreview from './WebcamPreview/WebcamPreview';
-import Calibration from './Calibration/Calibration';
 import Settings from './Settings/Settings';
 import Controls from './Controls/Controls';
 import Analytics from './Analytics/Analytics';
@@ -15,8 +14,7 @@ export default function Detction() {
 	const dispatch = useDispatch();
 	const {settings} = useSelector((state) => state.settings);
 	const {notificationVisiblity} = useSelector((state) => state.notifications);
-	const {calibrationX, calibrationVisiblity} = useSelector((state) => state.detection);
-	const webcamRef = useRef(null);
+	const {calibrationX} = useSelector((state) => state.detection);
 
 	useEffect(() => {
 		dispatch(loadSettings());
@@ -25,11 +23,10 @@ export default function Detction() {
 	return (
 		<div className="container" data-theme={settings.darkMode ? 'dark' : 'light'}>
 			<div className="detection">
-				<WebcamPreview webcamRef={webcamRef} />
+				<WebcamPreview />
 				{calibrationX !== false && <Controls />}
 				<Settings />
 				<Analytics />
-				{calibrationVisiblity && <Calibration webcamRef={webcamRef} />}
 				{notificationVisiblity && <Notification />}
 			</div>
 		</div>

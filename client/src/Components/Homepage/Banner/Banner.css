@@ -1,6 +1,7 @@
 .banner{
     width: 100%;
     height: 70vh;
+    gap: 0 1em;
     display: flex;
     position: relative;
     background-color: #fff;
@@ -21,21 +22,27 @@
     min-width: 350px;
     max-width: 35vw;
 }
+.banner .about span{
+    color: #0071ad;
+}
 .banner .about h1{
     margin: 0;
     font-size: 1.6em;
 }
-.banner .getStarted{
+.banner a{
+    width: fit-content;
+    text-decoration: none;
+}
+.banner a .getStarted{
     border: none;
     color: #fff;
     width: fit-content;
     font-size: 14px;
     cursor: pointer;
-    text-decoration: unset;
     background-color: #0071ad;
     border-radius: 8px;
     padding: 9px 30px;
 }
-.banner .getStarted:hover{
+.banner a .getStarted:hover{
     background-color: #00659b;
 }

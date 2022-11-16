@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {sendNotification} from '../../../redux/notificationManager';
-import {setCalibrationX, hideCalibration} from '../../../redux/detectionManager';
+import {sendNotification} from '../../../../redux/notificationManager';
+import {setCalibrationX, hideCalibration} from '../../../../redux/detectionManager';
 
-import messages from '../Notification/messages';
-import {detect} from '../Helpers';
+import messages from '../../Notification/messages';
+import {detect} from '../../Helpers';
 import './Calibration.css';
 
 export default function Calibration(props) {
@@ -27,19 +27,17 @@ export default function Calibration(props) {
 	}
 
 	return (
-		<div className="calibration-pointer-events-wrapper">
-			<div className="calibration">
-				<p>Point your head at the "Calibrate" button and press it to calibrate.</p>
-				<div className="buttons">
-					{calibrationX !== false && (
-						<button className="cancel" onClick={() => dispatch(hideCalibration())}>
-							Cancel
-						</button>
-					)}
-					<button className="calibrate" onClick={calibrateX} disabled={!webcamReady}>
-						Calibrate
+		<div className="calibration">
+			<p>Point your head at the "Calibrate" button and press it to calibrate.</p>
+			<div className="buttons">
+				{calibrationX !== false && (
+					<button className="default-button red" onClick={() => dispatch(hideCalibration())}>
+						Cancel
 					</button>
-				</div>
+				)}
+				<button className="default-button" onClick={calibrateX} disabled={!webcamReady}>
+					Calibrate
+				</button>
 			</div>
 		</div>
 	);

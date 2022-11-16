@@ -5,23 +5,9 @@
     justify-content: center;
     flex-direction: column;
 }
-.toggleAnalyticsVisibility{
+.analytics .toggleAnalyticsVisibility{
     font-size: 13px;
-    cursor: pointer;
     padding: 6px 16px;
-    color: var(--secondary-font-color);
-    background: var(--primary-color);
-    border: 3px solid rgb(var(--primary-theme-color));
-    transition: border .2s;
-    border-radius: var(--small-border-radius);
-}
-.toggleAnalyticsVisibility:not(:disabled):hover{
-    border: 3px solid var(--tertiary-color);
-    background: var(--primary-color-hover);
-}
-.toggleAnalyticsVisibility:disabled{
-    cursor: default;
-    background: var(--button-disabled-color);
 }
 
 .charts{

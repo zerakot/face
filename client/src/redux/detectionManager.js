@@ -4,7 +4,7 @@ export const detectionSlice = createSlice({
 	name: 'detection',
 	initialState: {
 		webcamReady: false,
-		calibrationVisiblity: true,
+		calibrationVisiblity: false,
 		calibrationX: false,
 		detectionState: false,
 	},
@@ -20,6 +20,7 @@ export const detectionSlice = createSlice({
 		},
 		setWebcamReady: (state) => {
 			state.webcamReady = true;
+			state.calibrationVisiblity = true;
 		},
 		toggleDetectionState: (state) => {
 			console.log(state.detectionState);
