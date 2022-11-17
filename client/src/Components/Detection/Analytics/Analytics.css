@@ -6,8 +6,8 @@
     flex-direction: column;
 }
 .analytics .toggleAnalyticsVisibility{
-    font-size: 13px;
-    padding: 6px 16px;
+    font-size: 13px !important;
+    padding: 6px 16px !important;
 }
 
 .charts{
