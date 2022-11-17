@@ -26,7 +26,6 @@ function App() {
 export default App;
 
 /* 
-	- Stwórz stronę główną
 	- Sprawdź i/lub popraw działanie korekcji
 	- Popraw kalibrację
 
