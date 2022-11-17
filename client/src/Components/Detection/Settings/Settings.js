@@ -18,11 +18,11 @@ export default function Settings() {
 				});
 			dispatch(setAvailableWebcams([...availableList]));
 		});
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div className="settings">
-			<div className="colorSwitcher">
+			<div className="themeSwitcher">
 				<label htmlFor={`dark-mode-${id}`}>
 					<input
 						type="checkbox"

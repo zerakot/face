@@ -24,7 +24,7 @@ export default function Detction() {
 		<div className="container" data-theme={settings.darkMode ? 'dark' : 'light'}>
 			<div className="detection">
 				<WebcamPreview />
-				{calibrationX !== false && <Controls />}
+				<Controls />
 				<Settings />
 				<Analytics />
 				{notificationVisiblity && <Notification />}

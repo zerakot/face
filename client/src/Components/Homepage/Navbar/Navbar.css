@@ -29,15 +29,12 @@
 .navbar .links li{
     cursor: pointer;
 }
-.navbar .links li a{
-    color: #0071ad;
-    text-decoration: unset;
-}
 .navbar .getStarted{
     border: none;
     color: #0071ad;
     width: fit-content;
     font-size: 14px;
+    text-decoration: unset;
     cursor: pointer;
     background-color: #fff;
     border-radius: 8px;

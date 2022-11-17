@@ -4,10 +4,10 @@ import './Controls.css';
 
 export default function Controls() {
 	const dispatch = useDispatch();
-	const {detectionState, calibrationVisiblity} = useSelector((state) => state.detection);
+	const {calibrationX, detectionState, calibrationVisiblity} = useSelector((state) => state.detection);
 
 	return (
-		<div className="controls">
+		<div className={calibrationX === false || calibrationVisiblity === true ? 'controls hide' : 'controls'}>
 			<button onClick={() => dispatch(toggleDetectionState())} className={detectionState ? 'default-button red' : 'default-button green'}>
 				{detectionState ? 'Pause' : 'Start'}
 			</button>

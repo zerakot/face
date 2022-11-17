@@ -1,6 +1,6 @@
 import ScrollIntoView from 'react-scroll-into-view';
 import {Link} from 'react-router-dom';
-import {ReactComponent as LogoSvg} from '../medias/logo.svg';
+import {ReactComponent as LogoSvg} from '../../../medias/logo.svg';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -25,8 +25,10 @@ export default function Navbar() {
 						Donate
 					</ScrollIntoView>
 				</li>
-				<li className="getStarted">
-					<Link to="/app">Get started</Link>
+				<li>
+					<Link to="/app" className="getStarted">
+						Get started
+					</Link>
 				</li>
 			</ul>
 		</div>

@@ -1,6 +1,6 @@
-import {ReactComponent as DonateSvg} from '../medias/donate.svg';
-import {ReactComponent as BmcSvg} from '../medias/bmc-logo.svg';
-import {ReactComponent as PatroniteSvg} from '../medias/patronite-logo.svg';
+import {ReactComponent as DonateSvg} from '../../../medias/donate.svg';
+import {ReactComponent as BmcSvg} from '../../../medias/bmc-logo.svg';
+import {ReactComponent as PatroniteSvg} from '../../../medias/patronite-logo.svg';
 import './Donate.css';
 
 export default function Donate() {

@@ -1,6 +1,7 @@
 .analytics{
     display: flex;
     gap: 7px 0;
+    margin-top: 1em;
     align-items: center;
     justify-content: center;
     flex-direction: column;

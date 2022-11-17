@@ -1,4 +1,4 @@
-import {ReactComponent as LogoSvg} from '../medias/logo-big.svg';
+import {ReactComponent as LogoSvg} from '../../../medias/logo-big.svg';
 import './Footer.css';
 
 export default function Footer() {
@@ -6,9 +6,7 @@ export default function Footer() {
 		<div className="footer">
 			<div className="column">
 				<LogoSvg className="logo" />
-				<div className="about">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum. optio, eaque rerum!
-				</div>
+				<div className="about">Let artificial intelligence take care of your posture with PostureAssistant.</div>
 			</div>
 			<div className="column">
 				<div className="socials">

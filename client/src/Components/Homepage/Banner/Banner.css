@@ -19,11 +19,12 @@
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    min-width: 350px;
-    max-width: 35vw;
+    min-width: 400px;
+    width: 35vw;
 }
 .banner .about span{
     color: #0071ad;
+    font-weight: bold;
 }
 .banner .about h1{
     margin: 0;

@@ -1,6 +1,6 @@
 .notification{
     width: 300px;
-    bottom: 15px;
+    bottom: 1.5em;
     right: -100%;
     display: flex;
     gap: 3px 0;
@@ -18,6 +18,16 @@
     from{right: -100%;}
     to{right: 20px;}
 }
+.notification svg.infoIcon{
+    top: -12px;
+    left: -12px;
+    background-color: rgb(var(--primary-theme-color));
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    fill: var(--primary-color);
+    position: absolute;
+}
 .notification .close{
     top: 5px;
     right: 5px;
@@ -34,12 +44,13 @@
 }
 .notification .title{
     width: 100%;
+    font-size: 1.1em;
     font-weight: bold;
     text-align: left;
 }
 .notification .description{
     width: 100%;
-    font-size: 13px;
+    font-size: .9em;
     text-align: left;
     color: var(--primary-font-color);
 }

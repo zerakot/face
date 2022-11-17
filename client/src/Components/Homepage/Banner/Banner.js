@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {ReactComponent as BannerSvg} from '../medias/banner.svg';
+import {ReactComponent as BannerSvg} from '../../../medias/banner.svg';
 import './Banner.css';
 
 export default function Banner() {
@@ -10,8 +10,8 @@ export default function Banner() {
 			<div className="about">
 				<h1>Let AI take care of your posture</h1>
 				<p>
-					<span>PostureAssistant.com</span> is an application that uses artificial intelligence to monitor your posture while working in front of a computer. Take care of your posture
-					completely free.
+					<span>PostureAssistant</span> is a tool that allows you to take care of your healthy posture while working at the computer. Using artificial intelligence, the application monitors
+					your posture and tells you when to correct it.
 				</p>
 				<Link to="/app">
 					<button className="getStarted">Get Started</button>

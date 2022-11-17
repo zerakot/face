@@ -4,12 +4,11 @@ function getGradient(ctx, chartArea, scales) {
 
 	const pointzero = scales.y.getPixelForValue(0);
 	const pointzeroHeight = pointzero - chartArea.top;
-	const pointzeroPercentage = pointzeroHeight / chartHeight;
+	const pointzeroPercentage = pointzeroHeight / chartHeight > 0 ? pointzeroHeight / chartHeight : 0;
 
 	gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartHeight + chartArea.top);
 	gradient.addColorStop(pointzeroPercentage, '#0071ad');
 	gradient.addColorStop(pointzeroPercentage, '#e00000');
-
 	return gradient;
 }
 

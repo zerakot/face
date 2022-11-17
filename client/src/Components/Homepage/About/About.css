@@ -19,6 +19,7 @@
 .section .box{
     height: 100%;
     display: flex;
+    gap: .9em 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -29,8 +30,8 @@
 .section .box.text h2{
     margin: 0;
 }
-.section .box.image{
-    padding: 10px 0;
+.section .box.text p{
+    margin: 0;
 }
 .section .box.image svg{
     max-width: 450px;
