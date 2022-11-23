@@ -19,9 +19,9 @@ const videoConstraints = {
 	height: 720,
 };
 
-export default function WebcamPreview(props) {
+export default function WebcamPreview() {
 	const dispatch = useDispatch();
-	const {calibrationX, calibrationVisiblity, detectionState, webcamReady} = useSelector((state) => state.detection);
+	const {calibrationX, calibrationVisiblity, detectionState} = useSelector((state) => state.detection);
 	const {settings} = useSelector((state) => state.settings);
 	const webcamRef = useRef(null);
 
@@ -31,24 +31,25 @@ export default function WebcamPreview(props) {
 	useEffect(() => {
 		if (calibrationX !== false && detectionState) {
 			let interval = setInterval(async () => {
-				const rotationValue = await detect(webcamRef);
-				if (rotationValue === 'ConnectionError') {
+				const response = await detect(webcamRef.current.getScreenshot());
+				if (response === 'noFaceDetected') {
+					noFaceDetectedAudio.play();
+					return;
+				}
+				if (response === 'connectionError') {
 					dispatch(sendNotification(messages.connectionErrorNotify));
 					dispatch(toggleDetectionState());
 					return;
 				}
-				if (rotationValue === 'NoFaceDetected') {
-					noFaceDetectedAudio.play();
-					return;
-				}
-				//If the user has an incorrect posture
-				if (rotationValue < calibrationX + settings.sensitivity) {
+
+				const pitch = response;
+				if (pitch < calibrationX + settings.sensitivity) {
 					alertAudio.play();
 				}
 				dispatch(
 					addLog({
 						x: new Date().toLocaleTimeString(),
-						y: Math.round((rotationValue - (calibrationX + settings.sensitivity)) * 100) / 100,
+						y: Math.round((pitch - (calibrationX + settings.sensitivity)) * 100) / 100,
 					})
 				);
 			}, settings.detectionInterval * 1000);

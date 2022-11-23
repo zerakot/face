@@ -1,2 +1,2 @@
-__pycache__/
-.venv
+# dependencies
+/node_modules

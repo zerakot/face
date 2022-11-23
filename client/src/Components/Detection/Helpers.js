@@ -1,16 +1,19 @@
-export const detect = async (webcamRef) => {
-	const imageSrc = webcamRef.current.getScreenshot();
-	try {
-		const response = await fetch('http://127.0.0.1:5000/api/test', {
-			method: 'POST',
-			headers: {Accept: 'application/json', 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
-			body: imageSrc,
-		});
-		const data = await response.json();
+import axios from 'axios';
 
-		if (data.results?.error === 'NoFaceDetected') return 'NoFaceDetected';
-		return data.results.rotationX;
-	} catch {
-		return 'ConnectionError';
+export async function detect(imageDataUrl) {
+	try {
+		const response = await axios.post(
+			`http://localhost:3001/detect`,
+			{imageDataUrl: imageDataUrl},
+			{
+				headers: {'Content-Type': 'application/json'},
+			}
+		);
+		console.log(response);
+		if (response.data.status === 'faceDetected') return response.data.pitch;
+		if (response.data.status === 'noFaceDetected') return 'noFaceDetected';
+		if (response.data.status === 'connectionError') return 'connectionError';
+	} catch (err) {
+		return 'connectionError';
 	}
-};
+}

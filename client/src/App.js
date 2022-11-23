@@ -26,10 +26,9 @@ function App() {
 export default App;
 
 /* 
+	RFC
 	- Sprawdź i/lub popraw działanie korekcji
-	- Popraw kalibrację
 
 	Commit:
-	- Popraw błąd złego wyświetlania wysokości kalibracji
-	- Dodaj podziałki na ustawienia pośrednie
+	
 */

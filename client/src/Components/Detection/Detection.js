@@ -14,7 +14,6 @@ export default function Detction() {
 	const dispatch = useDispatch();
 	const {settings} = useSelector((state) => state.settings);
 	const {notificationVisiblity} = useSelector((state) => state.notifications);
-	const {calibrationX} = useSelector((state) => state.detection);
 
 	useEffect(() => {
 		dispatch(loadSettings());

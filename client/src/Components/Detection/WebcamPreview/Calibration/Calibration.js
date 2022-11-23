@@ -12,17 +12,18 @@ export default function Calibration(props) {
 	const webcamRef = props.webcamRef;
 
 	async function calibrateX() {
-		const rotationValue = await detect(webcamRef);
-		if (rotationValue === 'ConnectionError') {
-			dispatch(sendNotification(messages.connectionErrorNotify));
-			return;
-		}
-
-		if (rotationValue === 'NoFaceDetected') {
+		const response = await detect(webcamRef.current.getScreenshot());
+		if (response === 'noFaceDetected') {
 			dispatch(sendNotification(messages.noFaceDetectedNotify));
 			return;
 		}
-		dispatch(setCalibrationX(rotationValue));
+		if (response === 'connectionError') {
+			dispatch(sendNotification(messages.noFaceDetectedNotify));
+			return;
+		}
+
+		const pitch = response;
+		dispatch(setCalibrationX(parseFloat(pitch)));
 		dispatch(hideCalibration());
 	}
 
