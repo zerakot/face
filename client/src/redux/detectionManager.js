@@ -3,12 +3,26 @@ import {createSlice} from '@reduxjs/toolkit';
 export const detectionSlice = createSlice({
 	name: 'detection',
 	initialState: {
+		workTime: 0,
 		webcamReady: false,
 		calibrationVisiblity: false,
 		calibrationX: false,
 		detectionState: false,
+		summaryVisiblity: false,
 	},
 	reducers: {
+		runDetection: (state) => {
+			state.detectionState = true;
+			if (state.workTime > 0) return;
+			state.workTime = new Date().getTime();
+		},
+		pauseDetection: (state) => {
+			state.detectionState = false;
+		},
+		setWebcamReady: (state) => {
+			state.webcamReady = true;
+			state.calibrationVisiblity = true;
+		},
 		showCalibration: (state) => {
 			state.calibrationVisiblity = true;
 		},
@@ -18,18 +32,16 @@ export const detectionSlice = createSlice({
 		setCalibrationX: (state, action) => {
 			state.calibrationX = action.payload;
 		},
-		setWebcamReady: (state) => {
-			state.webcamReady = true;
-			state.calibrationVisiblity = true;
+		showSummary: (state) => {
+			state.summaryVisiblity = true;
 		},
-		toggleDetectionState: (state) => {
-			console.log(state.detectionState);
-			state.detectionState = !state.detectionState;
+		hideSummary: (state) => {
+			state.summaryVisiblity = false;
 		},
 	},
 });
 
 // Action creators are generated for each case reducer function
-export const {showCalibration, hideCalibration, setCalibrationX, setWebcamReady, toggleDetectionState} = detectionSlice.actions;
+export const {showCalibration, hideCalibration, setCalibrationX, setWebcamReady, runDetection, pauseDetection, showSummary, hideSummary} = detectionSlice.actions;
 
 export default detectionSlice.reducer;

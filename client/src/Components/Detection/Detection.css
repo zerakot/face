@@ -68,6 +68,7 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    position: relative;
     background: var(--tertiary-gray-color);
     justify-content: center;
     flex-direction: column;

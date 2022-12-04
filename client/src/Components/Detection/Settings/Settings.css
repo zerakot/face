@@ -8,8 +8,8 @@
     color: var(--primary-font-color);
 }
 .themeSwitcher {
-    top: 20px;
-    right: 40px;
+    top: -20px;
+    right: -20px;
     z-index: 1;
     position: absolute;
     -webkit-transition: 0.4s;

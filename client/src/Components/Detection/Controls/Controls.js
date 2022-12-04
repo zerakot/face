@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {showCalibration, toggleDetectionState} from '../../../redux/detectionManager';
+import {pauseDetection, runDetection} from '../../../redux/detectionManager';
 import './Controls.css';
 
 export default function Controls() {
@@ -8,12 +8,10 @@ export default function Controls() {
 
 	return (
 		<div className={calibrationX === false || calibrationVisiblity === true ? 'controls hide' : 'controls'}>
-			<button onClick={() => dispatch(toggleDetectionState())} className={detectionState ? 'default-button red' : 'default-button green'}>
+			<button onClick={() => (detectionState ? dispatch(pauseDetection()) : dispatch(runDetection()))} className={detectionState ? 'default-button red' : 'default-button green'}>
 				{detectionState ? 'Pause' : 'Start'}
 			</button>
-			<button className="default-button" onClick={() => dispatch(showCalibration())} disabled={calibrationVisiblity}>
-				Recalibrate
-			</button>
+			<button className="default-button">Finish</button>
 		</div>
 	);
 }

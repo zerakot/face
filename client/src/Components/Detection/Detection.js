@@ -6,6 +6,7 @@ import Settings from './Settings/Settings';
 import Controls from './Controls/Controls';
 import Analytics from './Analytics/Analytics';
 import Notification from './Notification/Notification';
+import Summary from './Summary/Summary';
 
 import {loadSettings} from '../../redux/settingsManager';
 import './Detection.css';
@@ -26,8 +27,10 @@ export default function Detction() {
 				<Controls />
 				<Settings />
 				<Analytics />
-				{notificationVisiblity && <Notification />}
+
+				<Summary />
 			</div>
+			{notificationVisiblity && <Notification />}
 		</div>
 	);
 }

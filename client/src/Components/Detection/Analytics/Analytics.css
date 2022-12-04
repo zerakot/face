@@ -6,10 +6,17 @@
     justify-content: center;
     flex-direction: column;
 }
+.analytics.collapsed{
+    gap: 0;
+}
 .analytics .toggleAnalyticsVisibility{
     font-size: 13px !important;
     padding: 6px 16px !important;
 }
+.analytics.collapsed .toggleAnalyticsVisibility{
+    border-radius: 8px 8px 0 0;
+}
+
 
 .charts{
     width: 100%;

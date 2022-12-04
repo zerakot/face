@@ -28,6 +28,8 @@ export default App;
 /* 
 	RFC
 	- Sprawdź i/lub popraw działanie korekcji
+	- Nowe dane analityki: czas utrzymania dobrej pozycji
+	- Opcja zakończenia pracy i podsumowanie (analitics, dobra passa)
 
 	Commit:
 	

@@ -1,0 +1,5 @@
+{
+	"appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+	"appService.defaultWebAppToDeploy": "/subscriptions/358b29b0-0b6b-4656-8dae-b60ce74bd1d2/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/FaceApiDemo-wiktor",
+	"appService.deploySubpath": "server"
+}

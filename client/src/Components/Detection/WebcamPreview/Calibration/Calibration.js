@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {sendNotification} from '../../../../redux/notificationManager';
-import {setCalibrationX, hideCalibration} from '../../../../redux/detectionManager';
+import {setCalibrationX, hideCalibration, showCalibration} from '../../../../redux/detectionManager';
 
 import messages from '../../Notification/messages';
 import {detect} from '../../Helpers';
@@ -8,7 +8,7 @@ import './Calibration.css';
 
 export default function Calibration(props) {
 	const dispatch = useDispatch();
-	const {calibrationX, webcamReady} = useSelector((state) => state.detection);
+	const {calibrationX, webcamReady, calibrationVisiblity} = useSelector((state) => state.detection);
 	const webcamRef = props.webcamRef;
 
 	async function calibrateX() {
@@ -28,7 +28,7 @@ export default function Calibration(props) {
 	}
 
 	return (
-		<div className="calibration">
+		<div className={'calibration' + (calibrationVisiblity ? '' : ' hide')}>
 			<p>Point your head at the "Calibrate" button and press it to calibrate.</p>
 			<div className="buttons">
 				{calibrationX !== false && (
@@ -40,6 +40,10 @@ export default function Calibration(props) {
 					Calibrate
 				</button>
 			</div>
+
+			<button className="default-button recalibrate" onClick={() => dispatch(showCalibration())}>
+				Recalibrate
+			</button>
 		</div>
 	);
 }

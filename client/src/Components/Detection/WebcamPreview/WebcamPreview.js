@@ -5,7 +5,7 @@ import Webcam from 'react-webcam';
 import Calibration from './Calibration/Calibration';
 import {addLog} from '../../../redux/analyticsManager';
 import {sendNotification} from '../../../redux/notificationManager';
-import {setWebcamReady, toggleDetectionState} from '../../../redux/detectionManager';
+import {setWebcamReady, pauseDetection} from '../../../redux/detectionManager';
 
 import messages from '../Notification/messages';
 import {detect} from '../Helpers';
@@ -21,7 +21,7 @@ const videoConstraints = {
 
 export default function WebcamPreview() {
 	const dispatch = useDispatch();
-	const {calibrationX, calibrationVisiblity, detectionState} = useSelector((state) => state.detection);
+	const {calibrationX, detectionState} = useSelector((state) => state.detection);
 	const {settings} = useSelector((state) => state.settings);
 	const webcamRef = useRef(null);
 
@@ -38,7 +38,7 @@ export default function WebcamPreview() {
 				}
 				if (response === 'connectionError') {
 					dispatch(sendNotification(messages.connectionErrorNotify));
-					dispatch(toggleDetectionState());
+					dispatch(pauseDetection());
 					return;
 				}
 
@@ -67,7 +67,7 @@ export default function WebcamPreview() {
 				onUserMediaError={() => dispatch(sendNotification(messages.userMediaErrorNotify))}
 				videoConstraints={{...videoConstraints, deviceId: settings.cameraId}}
 			/>
-			{calibrationVisiblity && <Calibration webcamRef={webcamRef} />}
+			<Calibration webcamRef={webcamRef} />
 		</div>
 	);
 }

@@ -9,10 +9,14 @@
     background: #fff;
     align-items: center;
     flex-direction: column;
+    transition-duration: .3s;
     justify-content: center;
     background-color: rgba(var(--primary-theme-color), 0.8);
     color: var(--primary-font-color);
     border-radius: var(--small-border-radius);
+}
+.calibration.hide{
+    top: -100%;
 }
 .calibration p{
     margin: 0;
@@ -25,4 +29,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+.calibration .recalibrate{
+    bottom: -40px;
+    right: 15px;
+    font-size: 12px;
+    padding: 6px 12px;
+    position: absolute;
 }
