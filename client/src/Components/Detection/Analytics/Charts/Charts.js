@@ -5,7 +5,6 @@ import {useSelector} from 'react-redux';
 
 export default function Charts(props) {
 	const {settings} = useSelector((state) => state.settings);
-	console.log(props.logs);
 
 	const pieData = generatePieChart({data: [props.logs.filter((el) => el.y > 0).length, props.logs.filter((el) => el.y < 0).length], darkMode: settings.darkMode});
 	const lineProps = generateLineConfig({data: [...props.logs].slice(-9), darkMode: settings.darkMode});

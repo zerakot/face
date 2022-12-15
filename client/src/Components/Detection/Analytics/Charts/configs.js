@@ -48,7 +48,7 @@ export function generateLineConfig(props) {
 					display: false,
 				},
 				title: {
-					display: true,
+					display: false,
 					text: 'Rotation',
 					padding: {top: 5, bottom: 8},
 				},
@@ -84,7 +84,7 @@ export function generatePieChart(props) {
 					display: false,
 				},
 				title: {
-					display: true,
+					display: false,
 					text: 'Ratio',
 					padding: {top: 5, bottom: 8},
 				},

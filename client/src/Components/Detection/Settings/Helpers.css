@@ -32,7 +32,8 @@
     display: block;
     cursor: pointer;
     border-radius: 50px;
-    background-color: var(--tertiary-theme-color);
+    box-shadow: inset 0 0 10px #67676729;
+    background-color: var(--theme-secondary);
 }
 .themeSwitcher .slider:before {
     position: absolute;
@@ -53,7 +54,7 @@
     background-position: center;
 }
 .themeSwitcher input:checked + .slider{
-    background-color: var(--tertiary-theme-color);
+    background-color: var(--theme-secondary );;
 }  
 .themeSwitcher input:checked + .slider:before {
     -webkit-transform: translateX(24px);

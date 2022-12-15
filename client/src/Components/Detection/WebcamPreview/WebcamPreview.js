@@ -5,7 +5,7 @@ import Webcam from 'react-webcam';
 import Calibration from './Calibration/Calibration';
 import {addLog} from '../../../redux/analyticsManager';
 import {sendNotification} from '../../../redux/notificationManager';
-import {setWebcamReady, pauseDetection} from '../../../redux/detectionManager';
+import {setWebcamReady, pauseDetection, incrementWorkTime} from '../../../redux/detectionManager';
 
 import messages from '../Notification/messages';
 import {detect} from '../Helpers';
@@ -30,7 +30,7 @@ export default function WebcamPreview() {
 
 	useEffect(() => {
 		if (calibrationX !== false && detectionState) {
-			let interval = setInterval(async () => {
+			var monitoringInterval = setInterval(async () => {
 				const response = await detect(webcamRef.current.getScreenshot());
 				if (response === 'noFaceDetected') {
 					noFaceDetectedAudio.play();
@@ -53,8 +53,15 @@ export default function WebcamPreview() {
 					})
 				);
 			}, settings.detectionInterval * 1000);
-			return () => clearInterval(interval);
+
+			var workTimeInterval = setInterval(() => {
+				dispatch(incrementWorkTime());
+			}, 1000);
 		}
+		return () => {
+			clearInterval(workTimeInterval);
+			clearInterval(monitoringInterval);
+		};
 	}, [calibrationX, detectionState, settings.sensitivity, settings.detectionInterval]);
 
 	return (

@@ -25,7 +25,7 @@
     padding: 10px;
     overflow: hidden;
     max-width: 550px;
-    background: var(--primary-gray-color);
+    background: var(--theme-secondary);
     border-radius: var(--small-border-radius);
 }
 .chart{

@@ -1,59 +1,128 @@
-.summary{
-    top: 0;
-    left: 0;
-    height: 100%;
+.container .summary{
+    top: -100%;
+    left: 50%;
     width: 100%;
-    gap: 2em 0;
+    max-width: 500px;
+    gap: 1em 0;
     position: absolute;
     display: flex;
     align-items: center;
     padding: 20px;
-    background: var(--tertiary-gray-color);
+    transition-duration: .2s;
+    transform: translate(-50%, 0);
+    background: var(--theme-primary);
     flex-direction: column;
     border-radius: var(--medium-border-radius);
+    box-shadow: 0 0 0 1000px #000000a1, var(--soft-box-shadow);
+    animation: showSummary .2s forwards;
 }
-.summary .introduction{
+@keyframes showSummary {
+    to{top: 70px}
+}
+.container .summary .introduction{
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: .4em 0;
+    gap: .3em 0;
     text-align: center;
-    color: var(--primary-font-color);
+    color: var(--font-color);
 }
-.summary .introduction h2{
+.container .summary .introduction h2{
     margin: 0;
 }
-.summary .introduction p{
+.container .summary .introduction p{
     margin: 0;
     font-size: .9em;
 }
 
-.summary .statistics{
+.container .summary .statistics{
     width: 100%;
+    gap: 1em 0;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.summary .statistic{
+.container .summary .statistics .statistic{
     display: flex;
     width: 100%;
-    padding: 15px 20px;
-    background: var(--primary-gray-color);
+    gap: .4em 0;
+    padding: .9em .8em;
+    background: var(--theme-secondary);
     border-radius: var(--small-border-radius);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.summary .statistic .about{
+.container .summary .statistics .statistic .about{
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: .4em 0;
+    gap: .2em 0;
+    color: var(--font-color);
 }
-.summary .statistic h3{
+.container .summary .statistics .statistic .about h3{
     margin: 0;
 }
-.summary .statistic p{
+.container .summary .statistics .statistic .about p{
     margin: 0;
     font-size: .8em;
+}
+
+.container .summary .statistics .statistic .workTime{
+    width: 100%;
+    text-align: center;
+    color: var(--font-color);
+    font-size: 2.2em;
+    line-height: 1em;
+}
+.container .summary .statistics .statistic .deviationChart{
+    width: 100%;
+    height: 120px;
+}
+
+.container .summary .achievements{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .summary .achievements .achievement{
+    height: 70px;
+    transform: scale(.3);
+    opacity: 0;
+    position: relative;
+    animation: showAchievement .2s forwards .2s;
+}
+@keyframes showAchievement {
+    to{transform: scale(1); opacity: 1;}
+}
+.container .summary .achievements .achievement{
+    height: 70px;
+    transform: scale(.3);
+    position: relative;
+}
+.container .summary .achievements .achievement svg.shield{
+    height: 100%;
+    fill: var(--disabled-color);
+}
+
+.container .summary .achievements .achievement.gold svg.shield{
+    fill: var(--gold-color);
+    opacity: 1;
+}
+.container .summary .achievements .achievement.silver svg.shield{
+    fill: var(--silver-color);
+    opacity: 1;
+}
+.container .summary .achievements .achievement.brown svg.shield{
+    fill: var(--brown-color);
+    opacity: 1;
+}
+.container .summary .achievements .achievement svg.type{
+    fill: white;
+    width: 48%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

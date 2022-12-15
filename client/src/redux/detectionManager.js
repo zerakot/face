@@ -13,8 +13,6 @@ export const detectionSlice = createSlice({
 	reducers: {
 		runDetection: (state) => {
 			state.detectionState = true;
-			if (state.workTime > 0) return;
-			state.workTime = new Date().getTime();
 		},
 		pauseDetection: (state) => {
 			state.detectionState = false;
@@ -33,15 +31,19 @@ export const detectionSlice = createSlice({
 			state.calibrationX = action.payload;
 		},
 		showSummary: (state) => {
+			state.detectionState = false;
 			state.summaryVisiblity = true;
 		},
 		hideSummary: (state) => {
 			state.summaryVisiblity = false;
 		},
+		incrementWorkTime: (state) => {
+			state.workTime += 1000;
+		},
 	},
 });
 
 // Action creators are generated for each case reducer function
-export const {showCalibration, hideCalibration, setCalibrationX, setWebcamReady, runDetection, pauseDetection, showSummary, hideSummary} = detectionSlice.actions;
+export const {showCalibration, hideCalibration, setCalibrationX, setWebcamReady, runDetection, pauseDetection, showSummary, hideSummary, incrementWorkTime} = detectionSlice.actions;
 
 export default detectionSlice.reducer;

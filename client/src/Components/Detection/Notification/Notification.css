@@ -4,15 +4,15 @@
     right: -100%;
     display: flex;
     gap: 3px 0;
-    color: var(--primary-font-color);
+    color: var(--font-color);
     flex-direction: column;
     position: fixed;
     padding: 10px 15px;
     box-shadow: var(--soft-box-shadow);
-    border: 2px var(--tertiary-theme-color) solid;
+    border: 2px var(--border-color) solid;
     animation: showNotification .3s forwards;
     border-radius: var(--small-border-radius);
-    background-color: rgb(var(--primary-theme-color));
+    background-color: var(--theme-primary);
 }
 @keyframes showNotification{
     from{right: -100%;}
@@ -21,7 +21,7 @@
 .notification svg.infoIcon{
     top: -12px;
     left: -12px;
-    background-color: rgb(var(--primary-theme-color));
+    background-color: var(--theme-primary);
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -40,7 +40,7 @@
     position: absolute;
 }
 .notification .close svg{
-    fill: var(--primary-font-color);
+    fill: var(--font-color);
 }
 .notification .title{
     width: 100%;
@@ -52,20 +52,5 @@
     width: 100%;
     font-size: .9em;
     text-align: left;
-    color: var(--primary-font-color);
-}
-.notification button.action{
-    width: 100%;
-    margin: 5px 0 0 0;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 7px 0;
-    border: none;
-    transition: border .2s;
-    background: var(--tertiary-color);
-    color: var(--secondary-font-color);
-    border-radius: var(--small-border-radius);
-}
-.notification button.action:not(:disabled):hover{
-    background: var(--tertiary-color-hover);
+    color: var(--font-color);
 }

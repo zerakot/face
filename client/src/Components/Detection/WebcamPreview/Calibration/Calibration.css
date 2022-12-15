@@ -11,9 +11,9 @@
     flex-direction: column;
     transition-duration: .3s;
     justify-content: center;
-    background-color: rgba(var(--primary-theme-color), 0.8);
-    color: var(--primary-font-color);
+    color: var(--font-color);
     border-radius: var(--small-border-radius);
+    background-color: hsla(0, 0%, var(--background-lightness), .8);
 }
 .calibration.hide{
     top: -100%;

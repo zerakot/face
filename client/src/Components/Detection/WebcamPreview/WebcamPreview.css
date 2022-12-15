@@ -6,6 +6,6 @@
     width: 550px;
     height: 100%;
     min-height: 310px;
-    background: var(--primary-gray-color);
+    background: var(--theme-secondary);
     border-radius: var(--small-border-radius);
 }

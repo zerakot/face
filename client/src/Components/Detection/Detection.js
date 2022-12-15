@@ -15,6 +15,7 @@ export default function Detction() {
 	const dispatch = useDispatch();
 	const {settings} = useSelector((state) => state.settings);
 	const {notificationVisiblity} = useSelector((state) => state.notifications);
+	const {summaryVisiblity} = useSelector((state) => state.detection);
 
 	useEffect(() => {
 		dispatch(loadSettings());
@@ -27,9 +28,8 @@ export default function Detction() {
 				<Controls />
 				<Settings />
 				<Analytics />
-
-				<Summary />
 			</div>
+			{summaryVisiblity && <Summary />}
 			{notificationVisiblity && <Notification />}
 		</div>
 	);
