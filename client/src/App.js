@@ -27,8 +27,6 @@ export default App;
 
 /* 
 	RFC
-	- Przenieś achievements do obiektu i wyświetlaj mapując
-	- Popraw nadawanie klasy koloru osiągnięcia z klasy na atrybut do wykorzystania w css
 	- Sprawdź kod summary
 
 	- Sprawdź i/lub popraw działanie korekcji

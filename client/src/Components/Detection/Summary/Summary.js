@@ -2,7 +2,7 @@ import './Summary.css';
 import DeviationChart from './Assets/DeviationChart';
 import {useDispatch, useSelector} from 'react-redux';
 import {hideSummary} from '../../../redux/detectionManager';
-import Achievements from './Assets/Achievements';
+import Achievements from './Assets/Achievements/Achievements';
 
 function formatTime(timestamp) {
 	let seconds = timestamp / 1000;

@@ -31,9 +31,7 @@
     flex-direction: row;
 }
 .calibration .recalibrate{
-    bottom: -40px;
+    bottom: -52px;
     right: 15px;
-    font-size: 12px;
-    padding: 6px 12px;
     position: absolute;
 }

@@ -81,6 +81,9 @@
     font-size: 14px;
     cursor: pointer;
     padding: 9px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: box-shadow .2s;
     color: var(--secondary-font-color);
     background: var(--primary-color);
@@ -108,4 +111,27 @@
 .default-button.green:hover{
     box-shadow: 0 0 10px var(--accept-primary-color);
     background: var(--accept-hover-color);
+}
+
+.default-button.collapse{
+    padding: 0;
+    overflow: hidden;
+}
+.default-button.collapse svg{
+    height: 40px;
+    padding: 8px;
+    width: 40px;
+    fill: #ffffff;
+}
+.default-button.collapse span{
+    max-width: 0;
+    overflow: hidden;
+    font-size: .95em;
+    transition-duration: .2s;
+}
+.default-button.collapse:hover{
+    padding: 0 10px 0 0;
+}
+.default-button.collapse:hover span{
+    max-width: 100px;
 }

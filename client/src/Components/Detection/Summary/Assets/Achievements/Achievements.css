@@ -1,0 +1,35 @@
+.container .summary .achievements{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .summary .achievements .achievement{
+    height: 70px;
+    position: relative;
+}
+.container .summary .achievements .achievement svg.shield{
+    height: 100%;
+    fill: var(--disabled-color);
+}
+
+.container .summary .achievements .achievement.gold svg.shield{
+    fill: var(--gold-color);
+    opacity: 1;
+}
+.container .summary .achievements .achievement.silver svg.shield{
+    fill: var(--silver-color);
+    opacity: 1;
+}
+.container .summary .achievements .achievement.brown svg.shield{
+    fill: var(--brown-color);
+    opacity: 1;
+}
+.container .summary .achievements .achievement svg.type{
+    fill: white;
+    width: 48%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
